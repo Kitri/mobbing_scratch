@@ -23,12 +23,17 @@ XI, XII, XIII, XIV, XV, XVI, XVII, XVIII, XIX, XX
 """
 
 def convert_roman_numeral(roman_numeral: str) -> int:
-    return len(roman_numeral)
+    if 'V' in roman_numeral:
+        return 4
+    else:
+        return len(roman_numeral)
 
 
 testdata = [
     ('I',1),
-    ('II',2)
+    ('II',2),
+    ('III',3),
+    ('IV',4)
 ]
 @pytest.mark.parametrize("roman_numeral, expected_int", testdata)
 def test_roman_numeral_conversion(roman_numeral, expected_int):

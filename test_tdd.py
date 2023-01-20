@@ -36,7 +36,10 @@ def convert_roman_numeral(roman_numeral: str) -> int:
         last_char: int = roman_table[roman_numeral[-1]] 
         first_char: int = roman_table[roman_numeral[0]] 
 
-        return last_char - first_char
+        if first_char < last_char:
+            return last_char - first_char
+        else:
+            return last_char + first_char
         
 
     # II
@@ -55,6 +58,7 @@ testdata = [
     ('III',3),
     ('IV',4),
     ('V',5),
+    ('VI',6)
 ]
 @pytest.mark.parametrize("roman_numeral, expected_int", testdata)
 def test_roman_numeral_conversion(roman_numeral, expected_int):

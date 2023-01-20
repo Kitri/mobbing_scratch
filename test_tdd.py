@@ -23,10 +23,7 @@ XI, XII, XIII, XIV, XV, XVI, XVII, XVIII, XIX, XX
 """
 
 def convert_roman_numeral(roman_numeral: str) -> int:
-    if roman_numeral == 'I':
-        return 1
-    elif roman_numeral == 'II':
-        return 2
+    return len(roman_numeral)
 
 
 testdata = [
